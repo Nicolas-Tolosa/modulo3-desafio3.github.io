@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Otros desafíos</h1>
+        <ul><a href="./pintar.html">Desafio pintar</a></ul>
+        <ul><a href="./4_colores.html">Desafio 4 Colores</a></ul>
+    </div>
+    <div id="key" style="box-sizing:border-box; height:  200px; width: 200px; background-color: white; border: solid 1px black; display: grid; place-content: center;">
+        DIV que cambia de color <span>A: ROSADO</span> <span>S: NARANJO</span> <span>D: CELESTE</span>
+    </div>
+
+    <p>Añade elementos usando las siguientes teclas:</p>
+    <p>Q: Elemento color morado</p>
+    <p>W: Elemento color gris</p>
+    <p>E: Elemento color café</p>
+    <div id="container" style="display: flex; flex-wrap: wrap;">
+
+    </div>
+    <script>
+        document.addEventListener("keydown", function(event){
+            if (event.key === "a" || event.key === "A"){
+                document.querySelector("#key").style.backgroundColor = "pink"
+            } else if (event.key === "s" || event.key === "S"){
+                document.querySelector("#key").style.backgroundColor = "orange"                
+            } else if (event.key === "d" || event.key === "D"){
+                document.querySelector("#key").style.backgroundColor = "lightblue"
+            }
+        })
+
+        document.addEventListener("keydown", function(event){
+            if (event.key === "q" || event.key === "Q"){
+                CrearElementoQ()
+            } else if (event.key === "w" || event.key === "W"){
+                CrearElementoW()
+            } else if (event.key === "e" || event.key === "E"){
+                CrearElementoE()
+            }
+
+            function CrearElementoQ(){
+                contenedor = document.getElementById("container");
+                // Creamos un nuevo elemento <div>
+                nuevoElemento1 = document.createElement("div");
+                // Asignamos un texto al nuevo elemento
+                nuevoElemento1.textContent = "Elemento agregado";
+                // Agregamos el nuevo elemento al contenedor
+                contenedor.appendChild(nuevoElemento1);
+                nuevoElemento1.style.cssText = "background-color: purple; border: solid 1px black; height: 200px; width: 200px; display: grid; place-content: center;"
+
+                
+            }
+
+            function CrearElementoW(){
+                contenedor = document.getElementById("container");
+                // Creamos un nuevo elemento <div>
+                nuevoElemento2 = document.createElement("div");
+                // Asignamos un texto al nuevo elemento
+                nuevoElemento2.textContent = "Elemento agregado";
+                // Agregamos el nuevo elemento al contenedor
+                contenedor.appendChild(nuevoElemento2);
+                nuevoElemento2.style.cssText = "background-color: gray; border: solid 1px black; height: 200px; width: 200px; display: grid; place-content: center;"
+            }
+
+            function CrearElementoE(){
+                contenedor = document.getElementById("container");
+                // Creamos un nuevo elemento <div>
+                nuevoElemento3 = document.createElement("div");
+                // Asignamos un texto al nuevo elemento
+                nuevoElemento3.textContent = "Elemento agregado";
+                // Agregamos el nuevo elemento al contenedor
+                contenedor.appendChild(nuevoElemento3);
+                nuevoElemento3.style.cssText = "background-color: brown; border: solid 1px black; height: 200px; width: 200px; display: grid; place-content: center;"
+            }
+        })
+
+    </script>
+</body>
+</html>
